@@ -1,0 +1,9 @@
+<div class="container py-5">
+<div class="details">
+  <p>Lieu :<%= @event.lieu %></p>
+  <p>Début :<%= @event.debut %></p>
+  <p>Fin :<%= @event.fin %></p>
+  <p>Description :<%= @event.description %></p>
+</div>
+  <%= link_to "Retour", events_path, class: "btn btn-primary" %>
+</div>
