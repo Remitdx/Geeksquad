@@ -1,0 +1,7 @@
+<h1>All GeekSquad :</h1>
+<ul>
+  <% @events.each do |event|  %>
+      <li><%= link_to "Geeksquad n°#{event.id} à #{event.lieu}", event_path(event) %></li>
+  <% end %>
+</ul>
+<%= link_to "Home", root_path, class: "btn btn-secondary" %>
