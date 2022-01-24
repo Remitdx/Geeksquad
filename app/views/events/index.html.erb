@@ -1,7 +1,20 @@
-<h1>All GeekSquad :</h1>
-<ul>
-  <% @events.each do |event|  %>
-      <li><%= link_to "Geeksquad n°#{event.id} à #{event.lieu}", event_path(event) %></li>
-  <% end %>
-</ul>
-<%= link_to "Home", root_path, class: "btn btn-secondary" %>
+<div class="container py-5">
+  <h1>All GeekSquad :</h1>
+  <ul>
+    <% @events.each do |event|  %>
+        <li><%= link_to "Geeksquad n°#{event.id} à #{event.lieu}", event_path(event) %></li>
+    <% end %>
+  </ul>
+
+<h1>Créer le prochain event!</h1>
+
+  <div class="form">
+    <%= simple_form_for(@event) do |f| %>
+      <%= f.input :debut %>
+      <%= f.input :fin %>
+      <%= f.input :lieu %>
+      <%= f.input :description %>
+      <%= f.submit class:"btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
