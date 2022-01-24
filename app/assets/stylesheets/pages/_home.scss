@@ -1,1 +1,23 @@
 // Specific CSS for your home-page
+.homepage {
+
+  h1{
+    text-align: center;
+  }
+  .banner {
+    height: 75vh;
+  }
+  .accroche {
+    height: 25vh;
+    padding: 25px 150px;
+  }
+  .items {
+    display: inline;
+    list-style: none;
+    height: 150px;
+    width: 250px;
+    border: 1px solid black;
+    text-align: center;
+    align-items: center;
+  }
+}
