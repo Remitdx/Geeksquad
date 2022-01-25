@@ -11,7 +11,7 @@ class ParticipantsController < ApplicationController
       redirect_to event_path(params[:event_id]), notice: "Vous êtes déja inscrit !"
     else
       Participant.create!(event_id: params[:event_id].to_i, user: current_user)
-      redirect_to event_path(params[:event_id])
+      redirect_to event_path(params[:event_id]), notice: "Vous avez été ajouté !"
     end
   end
 end
