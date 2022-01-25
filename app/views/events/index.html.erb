@@ -4,14 +4,19 @@
     <% @events.each do |event|  %>
         <li>
           <%= link_to "Geeksquad n°#{event.id} à #{event.lieu}", event_path(event) %>
-          <%= link_to "Update", edit_event_path(event), class:"btn btn-warning"%>
+          <%= link_to "Update", events_path, class:"btn btn-warning"%>
           <%= link_to "Delete", event_path(event), method: :delete,
                                                 data: {confirm: "Are you sure"},
                                                 class:"btn btn-danger"%>
         </li>
+      <div class="d-none edit">
+        <h1>Modifie les infos de ton event</h1>
+        <%= render "form", event: event %>
+    </div>
     <% end %>
   </ul>
-
-  <h1>Créer le prochain event!</h1>
-  <%= render "form", event: @event %>
+  <div class="new">
+    <h1>Créer le prochain event!</h1>
+    <%= render "form", event: @event %>
+  </div>
 </div>

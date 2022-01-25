@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   def index
     @events = Event.all
-    @event = Event.new() # empty shell for simple form in index
+    @event = Event.new() # empty shell for simple form new in index
   end
 
   def show
@@ -15,10 +15,6 @@ class EventsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def edit
-    @van = Event.find(params[:id])
   end
 
   def update
