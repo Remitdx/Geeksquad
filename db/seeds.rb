@@ -11,10 +11,10 @@ Event.destroy_all # if Rails.env.development?
 User.destroy_all # if Rails.env.development?
 
 puts "Creating random users"
-user1 = User.create!(email: "florimond@gmail.com", password: "azerty")
-user2 = User.create!(email: "flavie@gmail.com", password: "azerty")
-user3 = User.create!(email: "fx@gmail.com", password: "azerty")
-user4 = User.create!(email: "remi@gmail.com", password: "azerty")
+user1 = User.create!(email: "remi@gmail.com", password: "azerty", nom: "Tondeux", prenom: "Rémi", pseudo: "Kodoliprane", photo:"", point: 0 )
+user2 = User.create!(email: "lulu@gmail.com", password: "azerty", nom: "Deroissart", prenom: "Lucas", pseudo: "NKodokante", photo:"", point: 0 )
+user3 = User.create!(email: "lele@gmail.com", password: "azerty", nom: "Froissard", prenom: "Léo", pseudo: "Kododiou", photo:"", point: 0 )
+user4 = User.create!(email: "mofo@gmail.com", password: "azerty", nom: "Schneider", prenom: "Arnaud", pseudo: "KodoctorMF", photo:"", point: 0 )
 
 puts "Creating random events !"
 event1 = Event.create!(debut: Date.new(2019,11,29), fin: Date.new(2019,11,30), lieu: "Mouchin", description: "Crémaillère pépère !")

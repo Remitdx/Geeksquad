@@ -12,6 +12,6 @@
 <h2>Participants</h2>
 <ul>
   <% @participants.each do |participant| %>
-    <li><%= participant.user.email %></li>
+    <li><%= participant.user.prenom %> "<%= participant.user.pseudo %>" <%= participant.user.nom %></li>
   <% end  %>
 </ul>
