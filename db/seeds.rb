@@ -6,12 +6,31 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts 'Cleaning database...'
+Participant.destroy_all # if Rails.env.development?
 Event.destroy_all # if Rails.env.development?
+User.destroy_all # if Rails.env.development?
 
+puts "Creating random users"
+user1 = User.create!(email: "florimond@gmail.com", password: "azerty")
+user2 = User.create!(email: "flavie@gmail.com", password: "azerty")
+user3 = User.create!(email: "fx@gmail.com", password: "azerty")
+user4 = User.create!(email: "remi@gmail.com", password: "azerty")
 
 puts "Creating random events !"
 event1 = Event.create!(debut: Date.new(2019,11,29), fin: Date.new(2019,11,30), lieu: "Mouchin", description: "Crémaillère pépère !")
 event2 = Event.create!(debut: Date.new(2019,11,29), fin: Date.new(2019,11,30), lieu: "RBX-Loft", description: "La der des der !")
-event1 = Event.create!(debut: Date.new(2019,11,29), fin: Date.new(2019,11,30), lieu: "Lulu - Lille", description: "Marie a dit oui !")
+event3 = Event.create!(debut: Date.new(2019,11,29), fin: Date.new(2019,11,30), lieu: "Lulu - Lille", description: "Marie a dit oui !")
 
+puts "Creating random participants !"
+participant1 = Participant.create!(event: event1, user: user1)
+participant2 = Participant.create!(event: event1, user: user4)
+participant3 = Participant.create!(event: event1, user: user3)
+
+participant1 = Participant.create!(event: event2, user: user1)
+participant2 = Participant.create!(event: event2, user: user2)
+participant3 = Participant.create!(event: event2, user: user3)
+
+participant1 = Participant.create!(event: event3, user: user3)
+participant2 = Participant.create!(event: event3, user: user2)
+participant3 = Participant.create!(event: event3, user: user4)
 puts "done !"

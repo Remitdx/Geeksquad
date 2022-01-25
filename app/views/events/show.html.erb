@@ -5,5 +5,13 @@
   <p>Fin :<%= @event.fin %></p>
   <p>Description :<%= @event.description %></p>
 </div>
+  <%= link_to "Rejoindre", event_participants_path(@event), method: :post, class: "btn btn-success" %>
   <%= link_to "Retour", events_path, class: "btn btn-primary" %>
 </div>
+
+<h2>Participants</h2>
+<ul>
+  <% @participants.each do |participant| %>
+    <li><%= participant.user.email %></li>
+  <% end  %>
+</ul>
