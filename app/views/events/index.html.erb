@@ -3,9 +3,10 @@
   <ul>
     <% @events.each do |event|  %>
         <li>
-          <%= link_to "Geeksquad n°#{event.id} à #{event.lieu}", event_path(event) %>
-          <%= link_to "Update", events_path, class:"btn btn-warning"%>
-          <%= link_to "Delete", event_path(event), method: :delete,
+          <%= "Geeksquad n°#{event.id} à #{event.lieu}"%>
+          <%= link_to "Détails", event_path(event), class:"btn btn-success"%>
+          <%= link_to "Modifier", events_path, class:"btn btn-warning"%>
+          <%= link_to "Supprimer", event_path(event), method: :delete,
                                                 data: {confirm: "Are you sure"},
                                                 class:"btn btn-danger"%>
         </li>
