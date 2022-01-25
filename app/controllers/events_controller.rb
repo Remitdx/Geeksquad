@@ -13,6 +13,7 @@ class EventsController < ApplicationController
     @event = Event.new(params_event)
     if @event.save
       redirect_to events_path
+      Participant.create!(event_id: @event.id, user: current_user)
     else
       render :new
     end
