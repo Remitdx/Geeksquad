@@ -12,6 +12,6 @@
 <h2>Participants</h2>
 <ul>
   <% @participants.each do |participant| %>
-    <li><%= participant.user.prenom %> "<%= participant.user.pseudo %>" <%= participant.user.nom %></li>
+    <li><%= participant.user.prenom %> "<%= participant.user.pseudo %>" <%= participant.user.nom %><%= link_to "Profile", user_path(participant.user), class: "btn btn-primary"  %></li>
   <% end  %>
 </ul>

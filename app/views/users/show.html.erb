@@ -1,0 +1,6 @@
+<div class="container">
+  <h1>Page de profil</h1>
+  <p><%= @user.prenom %> <%= @user.nom %></p>
+  <p> <%= @user.pseudo %></p>
+  <p> Tu as gagné <%= pluralize @user.point, "point" %> de GeekSquad !</p>
+</div>
