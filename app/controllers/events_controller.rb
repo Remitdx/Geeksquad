@@ -18,27 +18,23 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @van = Van.find(params[:id])
+    @van = Event.find(params[:id])
   end
 
   def update
-    if current_user
-      @van = Van.find(params[:id])
-      @van.update(params_van)
-      if @van.save
-        redirect_to van_path(@van)
-      else
-        render :new
-      end
+    @event = Event.find(params[:id])
+    @event.update(params_event)
+    if @event.save
+      redirect_to event_path(@event)
     else
-      redirect_to new_user_session_path
+      render :new
     end
   end
 
   def destroy
-    @van = Van.find(params[:id])
-    @van.destroy
-    redirect_to vans_path
+    @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to events_path
   end
 
    private
