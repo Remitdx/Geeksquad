@@ -3,7 +3,7 @@
   <ul>
     <% @events.each do |event|  %>
         <li>
-          <%= "Geeksquad n°#{event.id} à #{event.lieu}"%>
+          <%= "Geeksquad à #{event.lieu} le #{event.debut} "%>
           <%= link_to "Détails", event_path(event), class:"btn btn-success"%>
           <%= link_to "Modifier", events_path, class:"btn btn-warning"%>
           <%= link_to "Supprimer", event_path(event), method: :delete,
@@ -19,5 +19,8 @@
   <div class="new">
     <h1>Créer le prochain event!</h1>
     <%= render "form", event: @event %>
+  </div>
+  <div id="event-form-div"
+     data-events="<%= @events_dates.to_json %>">
   </div>
 </div>

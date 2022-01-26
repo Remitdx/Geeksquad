@@ -2,6 +2,12 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
     @event = Event.new() # empty shell for simple form new in index
+    @events_dates = @events.map do |event|
+      {
+        from: event.debut,
+        to:   event.fin
+      }
+    end
   end
 
   def show
@@ -12,7 +18,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(params_event)
     if @event.save
-      redirect_to events_path
+      redirect_to events_path, notice: "Event créé!"
       Participant.create!(event_id: @event.id, user: current_user)
     else
       render :new
