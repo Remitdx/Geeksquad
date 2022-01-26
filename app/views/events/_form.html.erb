@@ -4,8 +4,10 @@
                         as: :string,
                         required: false,
                         input_html: { id: "range_start", class:  "d-none" } %>
-    <%= f.input :lieu %>
-    <%= f.input :description %>
+    <%= f.input :lieu, label: false,
+                        placeholder: "Où ..." %>
+    <%= f.input :description, label: false,
+                              placeholder: "Quelque chose à ajouter ?" %>
     <%= f.submit class:"btn btn-primary" %>
   <% end %>
 </div>
