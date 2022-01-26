@@ -1,7 +1,13 @@
-<div class="form">
+<div class="form-wrapper">
   <%= simple_form_for(event) do |f| %>
-    <%= f.input :debut %>
-    <%= f.input :fin %>
+    <%= f.input :debut, label: "Sélectionne tes dates",
+                        as: :string,
+                        required: false,
+                        input_html: { id: "range_start", class:  "d-none" } %>
+    <%= f.input :fin, label: false,
+                      as: :string,
+                      required: false,
+                      input_html: { id: "range_end", class:  "d-none" } %>
     <%= f.input :lieu %>
     <%= f.input :description %>
     <%= f.submit class:"btn btn-primary" %>
