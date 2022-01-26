@@ -16,7 +16,11 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(params_event)
+    debut = params_event[:debut].split(' ')[0]
+    fin = params_event[:debut].split(' ')[2]
+    lieu = params_event[:lieu]
+    description = params_event[:description]
+    @event = Event.new(debut: debut, fin: fin, lieu: lieu, description: description)
     if @event.save
       redirect_to events_path, notice: "Event créé!"
       Participant.create!(event_id: @event.id, user: current_user)
