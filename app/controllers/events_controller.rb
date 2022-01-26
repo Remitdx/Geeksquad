@@ -16,7 +16,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    debut = params_event[:debut].split(' ')[0]
+    debut = params_event[:debut].split(' ')[0]  # Technique de manouche car la range de flatpicker ne marchait pas !
     fin = params_event[:debut].split(' ')[2]
     lieu = params_event[:lieu]
     description = params_event[:description]

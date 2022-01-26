@@ -1,5 +1,5 @@
 import flatpickr from "flatpickr"
-import rangePlugin from "flatpickr/dist/plugins/rangePlugin"
+require("flatpickr/dist/themes/dark.css");
 
 
 const initFlatpickr = () => {
