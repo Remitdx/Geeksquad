@@ -7,7 +7,7 @@ class RulesController < ApplicationController
   def create
     @rule = Rule.new(params_rule)
     if @rule.save
-      redirect_to rules_path, notice: "Event créé!"
+      redirect_to rules_path
     else
       render :new
     end
