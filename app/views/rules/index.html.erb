@@ -1,0 +1,23 @@
+<div class="container py-5">
+  <h1>Toutes les règles :</h1>
+  <ul>
+    <% @rules.each do |rule|  %>
+        <li>
+          <%= "#{rule.title} - #{rule.points}"%>
+          <%= rule.description %>
+          <%= link_to "Modifier", rules_path, class:"btn btn-warning"%>
+          <%= link_to "Supprimer", rule_path(rule), method: :delete,
+                                                data: {confirm: "Are you sure"},
+                                                class:"btn btn-danger"%>
+        </li>
+      <div class="edit">
+        <h1>Modifier la règle</h1>
+        <%= render "form_rule", rule: rule %>
+    </div>
+    <% end %>
+  </ul>
+  <div class="new">
+    <h1>Créer ta règle</h1>
+    <%= render "form_rule", rule: @rule %>
+  </div>
+</div>
