@@ -14,4 +14,10 @@ class ParticipantsController < ApplicationController
       redirect_to event_path(params[:event_id]), notice: "Vous avez été ajouté !"
     end
   end
+
+  def destroy
+    @participant = Participant.find(params[:id])
+    @participant.destroy
+    redirect_to event_path(@participant.event)
+  end
 end
