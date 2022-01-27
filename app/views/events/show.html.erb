@@ -12,6 +12,11 @@
 <h2>Participants</h2>
 <ul>
   <% @participants.each do |participant| %>
-    <li><%= participant.user.prenom %> "<%= participant.user.pseudo %>" <%= participant.user.nom %><%= link_to "Profile", user_path(participant.user), class: "btn btn-primary"  %></li>
+    <li><%= participant.user.prenom %> "<%= participant.user.pseudo %>" <%= participant.user.nom %>
+    <%= link_to "Profile", user_path(participant.user), class: "btn btn-primary"  %>
+    <%= link_to "Supprimer", participant_path(participant), method: :delete,
+                                                data: {confirm: "Are you sure"},
+                                                class:"btn btn-danger"%>
+    </li>
   <% end  %>
 </ul>
