@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   end
   resources :participants, only: [:destroy]
   resources :users, only: [:show]
-  resources :rules, only: [:index, :create, :update, :destroy]
+  resources :rules, only: [:index, :create, :update, :destroy] do
+    resources :logs, only: [:create] #nested ?
+  end
 end
